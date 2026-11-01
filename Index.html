@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TRUEAI - One Platform, Infinite Possibilities</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080d1b;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 6%;
+    background: #10182b;
+    border-bottom: 1px solid #26334d;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #65a7ff;
+}
+
+.logo span {
+    color: white;
+}
+
+.login-btn {
+    background: #3478f6;
+    color: white;
+    padding: 11px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.hero {
+    text-align: center;
+    padding: 75px 20px 55px;
+    background: radial-gradient(circle at top, #172d57, #080d1b 70%);
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 15px;
+    border: 1px solid #3478f6;
+    border-radius: 30px;
+    color: #8dbaff;
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-size: 43px;
+    margin-bottom: 18px;
+}
+
+.hero h1 span {
+    color: #5799ff;
+}
+
+.hero p {
+    color: #b5bfd1;
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.search {
+    display: block;
+    width: 90%;
+    max-width: 500px;
+    margin: 30px auto 0;
+    padding: 15px 18px;
+    background: #151f35;
+    color: white;
+    border: 1px solid #34496d;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+}
+
+.search:focus {
+    border-color: #5799ff;
+}
+
+.section {
+    padding: 35px 6%;
+}
+
+.section-title {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #9caac0;
+    margin-bottom: 28px;
+    line-height: 1.5;
+}
+
+.tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #121c30;
+    border: 1px solid #263854;
+    padding: 24px;
+    border-radius: 14px;
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #5799ff;
+}
+
+.icon {
+    font-size: 35px;
+    margin-bottom: 16px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #aab6c9;
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 45px;
+}
+
+.card button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #3478f6;
+    color: white;
+    font-weight: bold;
+}
+
+.card button:hover {
+    background: #5592ff;
+}
+
+.credit-box {
+    margin: 25px 6%;
+    padding: 25px;
+    background: linear-gradient(120deg, #142c55, #18203c);
+    border: 1px solid #34558a;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.credit-box h2 {
+    margin-bottom: 10px;
+}
+
+.credit-box p {
+    color: #bdc9dc;
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    margin-top: 35px;
+    background: #10182b;
+    color: #9caac0;
+    line-height: 1.8;
+}
+
+footer strong {
+    color: #65a7ff;
+}
+
+@media(max-width: 600px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .section-title {
+        font-size: 23px;
+    }
+
+    header {
+        padding: 16px 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">TRUE<span>AI</span></div>
+    <button class="login-btn" onclick="demoLogin()">Login</button>
+</header>
+
+<section class="hero">
+
+    <div class="badge">✦ THE FUTURE OF AI</div>
+
+    <h1>Welcome to <span>TRUEAI</span></h1>
+
+    <p>
+        One Platform. Infinite Possibilities.
+        Create images, videos, generate voices
+        and explore the power of Artificial Intelligence.
+    </p>
+
+    <input
+        type="text"
+        class="search"
+        id="searchBox"
+        placeholder="Search your AI tools..."
+        oninput="searchTools()"
+    >
+
+</section>
+
+<section class="section">
+
+    <h2 class="section-title">Explore AI Tools</h2>
+
+    <p class="section-subtitle">
+        Everything you need, in one AI platform.
+    </p>
+
+    <div class="tools" id="toolsContainer">
+
+        <div class="card">
+            <div class="icon">🎨</div>
+            <h3>Text to Image</h3>
+            <p>Turn your imagination into AI-generated images.</p>
+            <button onclick="openTool('Text to Image')">Explore Tool</button>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎬</div>
+            <h3>Text to Video</h3>
+            <p>Transform your text prompts into videos.</p>
+            <button onclick="openTool('Text to Video')">Explore Tool</button>
+        </div>
+
+        <div class="card">
+            <div class="icon">🖼️</div>
+            <h3>Image to Video</h3>
+            <p>Bring your images to life with AI animation.</p>
+            <button onclick="openTool('Image to Video')">Explore Tool</button>
+        </div>
+
+        <div class="card">
+            <div class="icon">🤖</div>
+            <h3>AI Chatbot</h3>
+            <p>Ask questions and explore intelligent AI assistance.</p>
+            <button onclick="openTool('AI Chatbot')">Explore Tool</button>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎙️</div>
+            <h3>Voice Generation</h3>
+            <p>Generate AI voices from your written text.</p>
+            <button onclick="openTool('Voice Generation')">Explore Tool</button>
+        </div>
+
+        <div class="card">
+            <div class="icon">💡</div>
+            <h3>Prompt Generator</h3>
+            <p>Create creative prompts for your AI projects.</p>
+            <button onclick="openTool('Prompt Generator')">Explore Tool</button>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔊</div>
+            <h3>AI Sound Effects</h3>
+            <p>Create sound effects for your videos.</p>
+            <button onclick="openTool('AI Sound Effects')">Explore Tool</button>
+        </div>
+
+        <div class="card">
+            <div class="icon">📹</div>
+            <h3>Long Video Maker</h3>
+            <p>Plan and create longer AI video projects.</p>
+            <button onclick="openTool('Long Video Maker')">Explore Tool</button>
+        </div>
+
+        <div class="card">
+            <div class="icon">✍️</div>
+            <h3>AI Writer</h3>
+            <p>Generate ideas, articles and creative writing.</p>
+            <button onclick="openTool('AI Writer')">Explore Tool</button>
+        </div>
+
+        <div class="card">
+            <div class="icon">📚</div>
+            <h3>AI Study Assistant</h3>
+            <p>Understand topics and learn with AI assistance.</p>
+            <button onclick="openTool('AI Study Assistant')">Explore Tool</button>
+        </div>
+
+    </div>
+</section>
+
+<div class="credit-box">
+    <h2>⚡ TRUEAI Credits</h2>
+    <p>
+        Our planned system will offer daily credits
+        for using different AI tools.
+    </p>
+    <p><strong>Credit system: Coming Soon</strong></p>
+</div>
+
+<footer>
+    <strong>TRUEAI</strong><br>
+    One Platform. Infinite Possibilities.<br>
+    © 2026 TRUEAI. All Rights Reserved.
+</footer>
+
+<script>
+
+function openTool(name) {
+    alert(name + " is coming soon!");
+}
+
+function demoLogin() {
+    alert("Google Login feature is coming soon!");
+}
+
+function searchTools() {
+    let input = document.getElementById("searchBox")
+        .value.toLowerCase();
+
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(function(card) {
+        let text = card.innerText.toLowerCase();
+
+        card.style.display =
+            text.includes(input) ? "block" : "none";
+    });
+}
+
+</script>
+
+</body>
+</html>
